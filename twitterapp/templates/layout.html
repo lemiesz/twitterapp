@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="twit">
+<head>
+  <title>Flask App</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <link rel="stylesheet" href="../static/css/main.css">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+  <script type="text/javascript" src="../static/js/twit.js"></script>
+  <script type="text/javascript" src="../static/js/profile.js"></script>
+
+</head>
+<body>
+
+<header>
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <a class="navbar-brand" href="#">Chengnesia</a>
+          <ul class="nav navbar-nav">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{url_for('signup')}}">Sign Up</a><li>
+            <li><a href="{{url_for('profile')}}">Profile</a><li>
+            <li><a href="{{url_for('signin')}}">Sign In</a><li>
+            <li><a href="{{url_for('signout')}}">Sign Out</a><li>
+            <li><a href="{{url_for('twit')}}">Twitter</a><li>
+          </ul>
+    </nav>
+</header>
+
+<!--   <header>
+    <div class="nav">
+      <h1 class="logo">Flask App</h1>
+      <nav>
+        <ul class="menu">
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{url_for('signup')}}">Sign Up</a><li>
+          <li><a href="{{url_for('profile')}}">Profile</a><li>
+          <li><a href="{{url_for('signin')}}">Sign In</a><li>
+          <li><a href="{{url_for('signout')}}">Sign Out</a><li>
+        </ul>
+      </nav>
+    </div>
+  </header> -->
+
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+  </body>
+</html>

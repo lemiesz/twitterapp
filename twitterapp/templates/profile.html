@@ -1,0 +1,58 @@
+{% extends "layout.html" %} 
+{% block content %}
+<div  ng-controller="profileControl"class="container">
+	<div class="jumbo">
+			<h2>
+				Profile
+			</h2>
+			<h3>
+				This is {{ session['email'] }}'s profile page
+			</h3><a href="/delete"><i class="btn">Delete User</i></a>
+
+	</div>
+	
+<div>
+	<div>
+		<h2 style="float:left display:inline;">
+			Average: {[{myAverage}]}
+		</h2>
+		<h2 style="float:right display:inline;">
+			DB Average: {[{dbAverage}]}
+		<h2>
+	</div>
+</div>
+	<div>
+		<div class='well'>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<td>
+							Tweet
+						</td>
+						<td>
+							Sentiment
+						</td>
+						<td>
+							Sentiment Value
+						</td><!--                    <td>Add to profile</td>
+ -->
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="value in listOfTweets">
+						<td>
+							{[{value.tweet}]}
+						</td>
+						<td>
+							{[{value.sentiment}]}
+						</td>
+						<td>
+							{[{value.sentimentValue}]}
+						</td><!--                        <td> <button ng-click="addToProfile(value)" class="btn">Add</button><td> -->
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+{% endblock %}

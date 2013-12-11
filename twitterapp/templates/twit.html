@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+  {% block content %}
+
+  <div ng-controller="SubmitUserCtrl">
+    <h3>Please enter your Twitter Username</h3>
+
+  <div class = "container">	
+    <input ng-model="user" type="text" class="form-control">
+		<button ng-click="submit()" class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+<!--     <h1 ng-repeat="tweeter in tweetList">{{tweeter}} 2 </h1>
+ -->
+<!--     <div ng-repeat="value in tweetList">
+      <h4>{[{value}]}</h4>
+    </div>
+  </div>   -->
+
+
+<!-- 
+   <table class = "table">
+    <thead> 
+      <th> Tweet </th>
+    </thead>
+    <tbody>
+      <td ng-repeat="value in tweetList">
+        <tr >{[{value}]}</tr>
+      </td>
+    </tbody>
+  </table>
+
+ -->
+<table class="table table-bordered">
+  <thead>
+      <td>Tweet</td>
+      <td>Sentiment</td>
+      <td>Add to profile</td>
+  </thead>
+  
+  <tbody>
+    <tr  ng-repeat="value in sentimentData">
+      <td >{[{value.tweet}]}</td>
+      <td >{[{value.data}]}</td>
+      <td> <button ng-click="addToProfile(value)" class="btn">Add</button><td>
+    </tr>
+
+  </tbody>
+
+</table>
+
+<button ng-click="snapShot()" ng-disabled="!loggedUser.isLogged" class="btn btn-lg btn-primary btn-block" type="submit">{[{buttonText}]}</button>
+
+</div>
+
+{% endblock %}
+
+
